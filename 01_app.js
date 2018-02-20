@@ -66,10 +66,8 @@ req.body._id = ObjectID(req.body._id)
 	 })
 }) 
 
-app.get('/detruire/:id', (req, res) => {
- var id = req.params.id
- console.log(id)
- db.collection('adresse').findOneAndDelete({"_id": ObjectID(id)}, (err, resultat) => {
+app.get('/detruire/', (req, res) => {
+ db.collection('adresse').deleteMany({}, (err, resultat) => {
 
 if (err) return console.log(err)
  res.redirect('/adresses')  // redirige vers la route qui affiche la collection
