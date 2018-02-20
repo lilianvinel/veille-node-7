@@ -37,7 +37,7 @@
  <input type = "hidden" placeholder="Nom" name = "nom"> 
  <input type = "hidden" placeholder="Prénom" name = "prenom">
  <input type = "hidden" placeholder="Téléphone" name = "telephone">
- <input type = "hidden" placeholder="Téléphone" name = "courriel">
+ <input type = "hidden" placeholder="Courriel" name = "courriel">
 </form>
 
 <script type="text/javascript">
@@ -57,6 +57,7 @@
  let nom = laLigne.children[1].innerHTML
  let prenom = laLigne.children[2].innerHTML
  let telephone = laLigne.children[3].innerHTML
+ let courriel = laLigne.children[4].innerHTML
 
 let elmForm = document.getElementById('mon_formulaire_modifier')
  console.log(elmForm.tagName)
@@ -65,6 +66,7 @@ let elmForm = document.getElementById('mon_formulaire_modifier')
  elmInput[1].value = nom
  elmInput[2].value = prenom
  elmInput[3].value = telephone
+ elmInput[4].value = courriel
 
 elmForm.submit()
 
