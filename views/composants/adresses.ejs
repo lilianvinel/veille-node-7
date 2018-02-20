@@ -16,6 +16,7 @@
  <th><a href='/trier/nom/<%= objOrdre.nom %>'>Nom</a></th> 
  <th><a href='/trier/prenom/<%= objOrdre.prenom %>'>Prenom</a></th>
  <th><a href='/trier/telephone/<%= objOrdre.telephone %>'>Telephone</a></th>
+ <th><a href='/trier/courriel/<%= objOrdre.courriel %>'>Courriel</a></th>
  <th>Ajouter</th> 
  </tr>
  <% adresses.forEach(elm => {%>
@@ -24,6 +25,7 @@
  <td contenteditable='true'><%= elm.nom %></td>
  <td contenteditable='true'><%= elm.prenom %></td>
  <td contenteditable='true'><%= elm.telephone %></td>
+ <td contenteditable='true'><%= elm.courriel %></td>
  <td><a href="/detruire/<%= elm._id %>">Delete</a></td>
  <td><a class='sauver' href="#">Sauver</a></td>
  </tr>
@@ -35,6 +37,7 @@
  <input type = "hidden" placeholder="Nom" name = "nom"> 
  <input type = "hidden" placeholder="Prénom" name = "prenom">
  <input type = "hidden" placeholder="Téléphone" name = "telephone">
+ <input type = "hidden" placeholder="Téléphone" name = "courriel">
 </form>
 
 <script type="text/javascript">
