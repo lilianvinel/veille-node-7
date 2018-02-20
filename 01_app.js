@@ -16,7 +16,6 @@ app.get('/accueil', function (req, res) {
 })
 
 app.get('/adresses', (req, res) => {
- console.log('la route route get /adresses = ' + req.url)
  
  var cursor = db.collection('adresse')
                 .find().toArray(function(err, resultat){
@@ -39,8 +38,23 @@ db.collection('adresse').save(req.body, (err, result) => {
 
 })
 
+/*app.post('/peupler',  (req, res) => {
+ // Preparer l'output en format JSON
+// on utilise l'objet req.body pour récupérer les données POST
+db.collection('adresse').save(req.body, (err, result) => {
+ if (err) return console.log(err)
+ console.log('sauvegarder dans la BD')
+ res.redirect('/adresses')
+ })
+
+})*/
+
 app.get('/peupler', (req, res) => {
-	console.log(peupler())
+	db.collection('adresse').save(JSON.parse(peupler()), (err, result) => {
+ 		if (err) return console.log(err)
+ 		console.log('sauvegarder dans la BD')
+ 		res.redirect('/adresses')
+ })
 })
 
 app.get('/trier/:cle/:ordre', (req, res) => {
