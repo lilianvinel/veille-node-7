@@ -42,6 +42,8 @@ const peupler_json = () => {
 		position = Math.floor(Math.random()*max)
 		
 	}
+
+	return('{"nom":' +'"'+tableauNom[position]+'"'+',"prenom":'+'"'+tableauPrenom[position]+'"'+',"telephone":' +'"'+ tableauNum[position] +'"'+',"courriel":' +'"'+ tableauCourriel[position]+'"'+'}');
 }
 
 module.exports = peupler_json
