@@ -94,6 +94,16 @@ app.get('/detruire/', (req, res) => {
 if (err) return console.log(err)
  res.redirect('/adresses')  // redirige vers la route qui affiche la collection
  })
+})
+
+app.get('/detruire/:id', (req, res) => {
+ var id = req.params.id
+ console.log(id)
+ db.collection('adresse').findOneAndDelete({"_id": ObjectID(id)}, (err, resultat) => {
+
+if (err) return console.log(err)
+ res.redirect('/adresses')  // redirige vers la route qui affiche la collection
+ })
 })	
 
 let db; // variable qui contiendra le lien sur la BD
