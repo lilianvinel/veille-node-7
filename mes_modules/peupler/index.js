@@ -1,21 +1,47 @@
 "use strict";
-const tableau = require('./tableau.js');
 
-const max = tableau.length;
+let max = 5;
 
-console.log('max = ' + max)
+let tableauPrenom = [
+	"Francis",
+	"Thomas",
+	"Angel",
+	"Alison",
+	"Pierre"
+];
+
+let tableauNom = [
+	"Laporte",
+	"Tucci",
+	"Bryan",
+	"Smith",
+	"Picola"
+];
+
+let tableauNum = [
+	"514-514-5151",
+	"514-123-4568",
+	"438-222-2222",
+	"438-999-9999",
+	"350-111-1111"
+];
+
+let tableauCourriel = [
+	"514-514-5151",
+	"514-123-4568",
+	"438-222-2222",
+	"438-999-9999",
+	"350-111-1111"
+];
 
 const peupler_json = () => {
 
 	let position = Math.floor(Math.random()*max)
-	let tabVille = []
 
-	for (let k=0 ; k<10; k++){
+	for (let k=0 ; k<5; k++){
 		position = Math.floor(Math.random()*max)
-		tabVille.push(tableau[position])
+		
 	}
-
-	return(tabVille);
 }
 
 module.exports = peupler_json
