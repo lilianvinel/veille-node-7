@@ -1,3 +1,4 @@
+"use strict";
 const express = require('express');
 const app = express();
 const fs = require('fs');
@@ -5,6 +6,7 @@ const bodyParser= require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
 const ObjectID = require('mongodb').ObjectID;
 const util = require("util");
+const peupler = require("./mes_modules/peupler");
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs'); // générateur de template
@@ -37,6 +39,10 @@ db.collection('adresse').save(req.body, (err, result) => {
 
 })
 
+app.get('/peupler', (req, res) => {
+	console.log(peupler())
+})
+
 app.get('/trier/:cle/:ordre', (req, res) => {
 	let cle = req.params.cle
 
@@ -64,7 +70,9 @@ req.body._id = ObjectID(req.body._id)
 		 console.log('sauvegarder dans la BD')
 		 res.redirect('/adresses')
 	 })
-}) 
+})
+
+
 
 app.get('/detruire/', (req, res) => {
  db.collection('adresse').deleteMany({}, (err, resultat) => {
