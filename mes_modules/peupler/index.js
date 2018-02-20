@@ -27,23 +27,21 @@ let tableauNum = [
 ];
 
 let tableauCourriel = [
-	"514-514-5151",
-	"514-123-4568",
-	"438-222-2222",
-	"438-999-9999",
-	"350-111-1111"
+	"@hotmail.com",
+	"@gmail.com",
+	"@yahoo.com",
+	"@hotmail.ca",
+	"@gmail.ca"
 ];
 
 const peupler_json = () => {
 
-	let position = Math.floor(Math.random()*max)
+	let position1 = Math.floor(Math.random()*max)
+	let position2 = Math.floor(Math.random()*max)
+	let position3 = Math.floor(Math.random()*max)
+	let position4 = Math.floor(Math.random()*max)
 
-	for (let k=0 ; k<5; k++){
-		position = Math.floor(Math.random()*max)
-		
-	}
-
-	return('{"nom":' +'"'+tableauNom[position]+'"'+',"prenom":'+'"'+tableauPrenom[position]+'"'+',"telephone":' +'"'+ tableauNum[position] +'"'+',"courriel":' +'"'+ tableauCourriel[position]+'"'+'}');
+	return('{"nom":' +'"'+tableauNom[position1]+'"'+',"prenom":'+'"'+tableauPrenom[position2]+'"'+',"telephone":' +'"'+ tableauNum[position3] +'"'+',"courriel":'+'"'+tableauPrenom[position2].toLowerCase()+'.'+tableauNom[position1].toLowerCase()+ tableauCourriel[position4]+'"}');
 }
 
 module.exports = peupler_json
